@@ -2,7 +2,31 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>프롬프트 자동 복사</title>
+    <title>계획안작성 프롬프트 복사</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        padding-top: 100px;
+      }
+      button {
+        font-size: 18px;
+        padding: 12px 24px;
+        border: none;
+        background-color: #2d89ef;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>📋 ChatGPT 프롬프트 복사</h2>
+    <p>
+      아래 버튼을 눌러 프롬프트를 복사하세요.<br />ChatGPT 앱에 붙여넣기 하세요.
+    </p>
+    <button onclick="copyPrompt()">📎 프롬프트 복사하기</button>
+
     <script>
       function copyPrompt() {
         const prompt = `📌 역할:  
@@ -38,13 +62,19 @@
 {지역명} = 대전
 {관련_부서목록} = 재난안전과, 상하수도사업본부, 건설관리과
 `;
-        navigator.clipboard.writeText(prompt).then(() => {
-          alert("프롬프트가 복사되었습니다! ChatGPT 앱에 붙여넣으세요.");
-        });
+        navigator.clipboard
+          .writeText(prompt)
+          .then(() => {
+            alert(
+              "✅ 프롬프트가 복사되었습니다! ChatGPT 앱에서 붙여넣기 해보세요."
+            );
+          })
+          .catch(() => {
+            alert(
+              "❌ 복사에 실패했습니다. 브라우저 설정을 확인하거나 수동으로 복사해 주세요."
+            );
+          });
       }
     </script>
-  </head>
-  <body onload="copyPrompt()">
-    <h2>프롬프트를 복사 중입니다...</h2>
   </body>
 </html>
