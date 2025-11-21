@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>EDA 프롬프트 복사</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        padding-top: 100px;
+      }
+      button {
+        font-size: 18px;
+        padding: 12px 24px;
+        border: none;
+        background-color: #2d89ef;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .prompt-box {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 2px solid #2d89ef;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        text-align: left;
+        white-space: pre-wrap;
+        font-family: "Courier New", monospace;
+        font-size: 14px;
+        line-height: 1.6;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>📋 Gemini 프롬프트 복사</h2>
+    <p>
+      아래 버튼을 눌러 프롬프트를 복사하세요.<br />Gemini 앱에 붙여넣기 하세요.
+    </p>
+    <button onclick="copyPrompt()">📎 프롬프트 복사하기</button>
+
+    <div class="prompt-box" id="promptBox">
+      “이 데이터 EDA 진행해줘. 1) 이 데이터로 EDA 진행할 리스트 알려줘 2) EDA를
+      진행할 각 항목들에 대해 분석하고, 테이블, 시각화 차트 등으로 설명해줘 3)
+      분석결과를 통해, 도출된 인사이트를 종합해서, 결과보고서 형태로 결론,
+      시사점 등을 작성해줘 ”
+    </div>
+
+    <script>
+      function copyPrompt() {
+        const prompt = `이 데이터 EDA 진행해줘.
+1) 이 데이터로 EDA 진행할 리스트 알려줘
+2) EDA를 진행할 각 항목들에 대해 분석하고, 테이블, 시각화 차트 등으로 설명해줘
+3) 분석결과를 통해, 도출된 인사이트를 종합해서, 결과보고서 형태로 결론, 시사점 등을 작성해줘
+
+`;
+        navigator.clipboard
+          .writeText(prompt)
+          .then(() => {
+            alert(
+              "✅ 프롬프트가 복사되었습니다! Gemini 앱에서 붙여넣기 해보세요."
+            );
+          })
+          .catch(() => {
+            alert(
+              "❌ 복사에 실패했습니다. 브라우저 설정을 확인하거나 수동으로 복사해 주세요."
+            );
+          });
+      }
+    </script>
+  </body>
+</html>
