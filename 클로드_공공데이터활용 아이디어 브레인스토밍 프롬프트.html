@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>민원답변초안 프롬프트 복사</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        padding-top: 100px;
+      }
+      button {
+        font-size: 18px;
+        padding: 12px 24px;
+        border: none;
+        background-color: #2d89ef;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .prompt-box {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 2px solid #2d89ef;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        text-align: left;
+        white-space: pre-wrap;
+        font-family: "Courier New", monospace;
+        font-size: 14px;
+        line-height: 1.6;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>📋 Claude 프롬프트 복사</h2>
+    <p>
+      아래 버튼을 눌러 프롬프트를 복사하세요.<br />Claude 앱에 붙여넣기 하세요.
+    </p>
+    <button onclick="copyPrompt()">📎 프롬프트 복사하기</button>
+
+    <div class="prompt-box" id="promptBox">
+      “나는 대전광역시 소속 공무원이야. 공공데이터 포털의 데이터를 기반으로
+      서비스를 제작해보려고해. 아이디어 브레인스토밍을 진행해줘.”
+    </div>
+
+    <script>
+      function copyPrompt() {
+        const prompt = `“나는 대전광역시 소속 공무원이야.
+공공데이터 포털의 데이터를 기반으로 
+서비스를 제작해보려고해. 
+아이디어 브레인스토밍을 진행해줘.”
+
+`;
+        navigator.clipboard
+          .writeText(prompt)
+          .then(() => {
+            alert(
+              "✅ 프롬프트가 복사되었습니다! Claude 앱에서 붙여넣기 해보세요."
+            );
+          })
+          .catch(() => {
+            alert(
+              "❌ 복사에 실패했습니다. 브라우저 설정을 확인하거나 수동으로 복사해 주세요."
+            );
+          });
+      }
+    </script>
+  </body>
+</html>
