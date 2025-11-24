@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>데모 플랫폼 개발 프롬프트 복사</title>
+    <title>아이디어 브레인스토밍 프롬프트 복사</title>
     <style>
       body {
         font-family: sans-serif;
@@ -42,7 +42,7 @@
     <button onclick="copyPrompt()">📎 프롬프트 복사하기</button>
 
     <div class="prompt-box" id="promptBox">
-      ## 🛠️ [개발 요청 프롬프트] 대전 서구 체육시설 찾기 플랫폼 ### 👩‍💻 역할
+      “## 🛠️ [개발 요청 프롬프트] 대전 서구 체육시설 찾기 플랫폼 ### 👩‍💻 역할
       (Role) 당신은 **React 기반 프론트엔드 개발 전문가**입니다. 다음 기술
       스택에 익숙하다고 가정합니다: - Next.js, React Query, Zustand 또는 Jotai -
       Tailwind CSS, TypeScript - 카카오맵 또는 네이버지도 API --- ### 🗂️ 데이터
@@ -75,12 +75,12 @@
       - "CSV 데이터를 React에서 어떻게 불러오나요?" - "Zustand로 즐겨찾기를
       어떻게 저장하죠?" - "Tailwind로 모바일/PC 반응형을 동시에 만들려면?" ---
       이 요청에 따라 단계별로 **코드 + 설명**을 포함한 결과를 생성해 주세요.
-      필요 시, 각 단계별 코드와 함께 상세 설명도 출력해 주세요.
+      필요 시, 각 단계별 코드와 함께 상세 설명도 출력해 주세요.”
     </div>
 
     <script>
       function copyPrompt() {
-        const prompt = `## 🛠️ [개발 요청 프롬프트] 대전 서구 체육시설 찾기 플랫폼
+        const prompt = `“## 🛠️ [개발 요청 프롬프트] 대전 서구 체육시설 찾기 플랫폼
 
 ### 👩‍💻 역할 (Role)
 당신은 **React 기반 프론트엔드 개발 전문가**입니다.  
@@ -150,9 +150,9 @@ React 기반 플랫폼에서 아래 목표를 달성해 주세요:
 5. **중간 점검**
    - 각 단계 완료 시 코드 + UI 결과를 확인할 수 있도록 출력
 6. **상태관리/API 연동도 사고 흐름에 따라 작성**
-   - 예: 즐겨찾기 상태는 Zustand로 관리, API는 React Query로 연동 등
+   - 예: 즐겨찾기 상태는 Zustand로 관리, API는 React Query로 연동 등”
 
-      `;
+`;
         navigator.clipboard
           .writeText(prompt)
           .then(() => {
