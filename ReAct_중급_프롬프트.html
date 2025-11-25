@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ReAct 중급 프롬프트 복사</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        padding-top: 100px;
+      }
+      button {
+        font-size: 18px;
+        padding: 12px 24px;
+        border: none;
+        background-color: #2d89ef;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .prompt-box {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 2px solid #2d89ef;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        text-align: left;
+        white-space: pre-wrap; /* 공백과 줄바꿈 유지 */
+        word-wrap: break-word; /* 긴 단어 줄바꿈 */
+        word-break: break-word; /* 단어 중간에서도 줄바꿈 */
+        font-family: "Courier New", monospace;
+        font-size: 14px;
+        line-height: 1.6;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>📋 ReAct 중급 프롬프트 복사</h2>
+    <p>아래 버튼을 눌러 프롬프트를 복사하세요.<br />.</p>
+    <button onclick="copyPrompt()">📎 프롬프트 복사하기</button>
+
+    <div class="prompt-box">
+      <pre id="promptBox">
+우리 시에서 운영 중인 스마트시티 통합플랫폼의 시민 이용률이 
+지난 6개월간 계속 감소하고 있습니다. 
+현재 월평균 이용자 수는 12,000명 수준이며, 시민 만족도 조사 결과 
+'사용이 어렵다'는 응답이 45%입니다. 이용률 개선 방안을 제시해주세요.
+
+[생각→조사→발견→반성] 패턴으로 3회 반복해주세요:
+
+【1회차】
+생각: 어떤 추가 정보가 필요한가?
+조사: 어떤 데이터를 확인할 것인가? (실제 조사한다고 가정)
+발견: 조사 결과 무엇을 알게 되었는가?
+반성: 다음에 무엇을 더 알아봐야 하는가?
+
+【2회차】
+생각: 구체적 원인을 어떻게 파악할 것인가?
+조사: 어떤 테스트를 할 것인가?
+발견: 테스트 결과는?
+반성: 어떤 해결책이 필요한가?
+
+【3회차】
+생각: 실행 계획은?
+조사: 실현 가능성 검토
+발견: 예상 효과와 리스크는?
+반성: 최종 결론
+
+
+</pre
+      >
+    </div>
+
+    <script>
+      function copyPrompt() {
+        const prompt = `우리 시에서 운영 중인 스마트시티 통합플랫폼의 시민 이용률이 
+지난 6개월간 계속 감소하고 있습니다. 
+현재 월평균 이용자 수는 12,000명 수준이며, 시민 만족도 조사 결과 
+'사용이 어렵다'는 응답이 45%입니다. 이용률 개선 방안을 제시해주세요.
+
+[생각→조사→발견→반성] 패턴으로 3회 반복해주세요:
+
+【1회차】
+생각: 어떤 추가 정보가 필요한가?
+조사: 어떤 데이터를 확인할 것인가? (실제 조사한다고 가정)
+발견: 조사 결과 무엇을 알게 되었는가?
+반성: 다음에 무엇을 더 알아봐야 하는가?
+
+【2회차】
+생각: 구체적 원인을 어떻게 파악할 것인가?
+조사: 어떤 테스트를 할 것인가?
+발견: 테스트 결과는?
+반성: 어떤 해결책이 필요한가?
+
+【3회차】
+생각: 실행 계획은?
+조사: 실현 가능성 검토
+발견: 예상 효과와 리스크는?
+반성: 최종 결론
+
+
+`;
+        navigator.clipboard
+          .writeText(prompt)
+          .then(() => {
+            alert("✅ 프롬프트가 복사되었습니다!");
+          })
+          .catch(() => {
+            alert(
+              "❌ 복사에 실패했습니다. 브라우저 설정을 확인하거나 수동으로 복사해 주세요."
+            );
+          });
+      }
+    </script>
+  </body>
+</html>

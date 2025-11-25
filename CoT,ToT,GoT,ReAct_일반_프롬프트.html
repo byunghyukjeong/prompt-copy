@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CoT,ToT,GoT,ReAct_일반 프롬프트 복사</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        padding-top: 100px;
+      }
+      button {
+        font-size: 18px;
+        padding: 12px 24px;
+        border: none;
+        background-color: #2d89ef;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .prompt-box {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 2px solid #2d89ef;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        text-align: left;
+        white-space: pre-wrap; /* 공백과 줄바꿈 유지 */
+        word-wrap: break-word; /* 긴 단어 줄바꿈 */
+        word-break: break-word; /* 단어 중간에서도 줄바꿈 */
+        font-family: "Courier New", monospace;
+        font-size: 14px;
+        line-height: 1.6;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>📋 CoT,ToT,GoT,ReAct_일반 프롬프트 복사</h2>
+    <p>아래 버튼을 눌러 프롬프트를 복사하세요.<br />.</p>
+    <button onclick="copyPrompt()">📎 프롬프트 복사하기</button>
+
+    <div class="prompt-box">
+      <pre id="promptBox">
+우리 시에서 운영중인 스마트 시티 통합플랫폼의 시민 이용률이 지난 6개월간 계속 감소하고 있습니다. 
+현재 월평균 이용자수는 12,000명 수준이며, 
+시민 만족도 조사결과 '사용이 어렵다'는 응답이 45%입니다. 
+이용률 개선 방안을 제시해주세요.
+
+</pre
+      >
+    </div>
+
+    <script>
+      function copyPrompt() {
+        const prompt = `우리 시에서 운영중인 스마트 시티 통합플랫폼의 시민 이용률이 지난 6개월간 계속 감소하고 있습니다. 
+현재 월평균 이용자수는 12,000명 수준이며, 
+시민 만족도 조사결과 '사용이 어렵다'는 응답이 45%입니다. 
+이용률 개선 방안을 제시해주세요.
+
+
+`;
+        navigator.clipboard
+          .writeText(prompt)
+          .then(() => {
+            alert("✅ 프롬프트가 복사되었습니다!");
+          })
+          .catch(() => {
+            alert(
+              "❌ 복사에 실패했습니다. 브라우저 설정을 확인하거나 수동으로 복사해 주세요."
+            );
+          });
+      }
+    </script>
+  </body>
+</html>
